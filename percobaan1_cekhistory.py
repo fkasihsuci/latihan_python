@@ -15,7 +15,7 @@ def cek_name(_cust_id):
                                     port=5432,
                                     database="postgres",
                                     user="postgres",
-                                    password="unicornterbang")
+                                    password="xxx")
         except : print("ERROR: Failed to connect database")
         if conn is not None : print("-----------INFO: Database success to connect-----------")
         
@@ -47,8 +47,7 @@ def cek_name(_cust_id):
             conn.close()
             print('-----------------Database connection closed.-------------------')
    
-        return data
-        
+        return data   
 
 def cek_rental_history (_cust_id):
     conn = None 
@@ -58,9 +57,9 @@ def cek_rental_history (_cust_id):
                                     port=5432,
                                     database="postgres",
                                     user="postgres",
-                                    password="unicornterbang")
+                                    password="xxx")
         except : print("ERROR: Failed to connect database")
-        if conn is not None : print("----------INFO: Database success to connect-----------")
+        if conn is not None : print("----------------INFO: Database success to connect--------------")
         
         sql = conn.cursor()
         
@@ -85,7 +84,6 @@ def cek_rental_history (_cust_id):
             conn.close()
             print('-----------------Database connection closed.-------------------')
         return data
-    
 
 if __name__ == '__main__':
     print("----Main start----")
@@ -100,8 +98,6 @@ if __name__ == '__main__':
        # print("MAIN INFO: Total Data :", len(rental_history))
     for row in range (len(rental_history)):
         print("Rental {} | Return {}".format(rental_history[0][0],rental_history[0][1]))
-
-
     print ("selesai")
     
       
